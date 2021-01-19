@@ -12,7 +12,8 @@ class UserAdminSeeder extends Seeder
      */
     public function run()
     {
-      \app\user::create([
+      
+      \App\User::create([
           'name' => 'Fabien',
           'email' => 'sketeuf@hotmail.com',
           'email_verified_at' => now(),
