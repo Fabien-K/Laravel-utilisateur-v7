@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class UserAdminSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class UserAdminSeeder extends Seeder
           'email' => 'sketeuf@hotmail.com',
           'email_verified_at' => now(),
           'password' => bcrypt('1234'),
-          'remember_token' => Str::random(25),
+          'remember_token' => Str::random(10),
           'is_admin' => 1,
           'approved_at'=> now(),
 
