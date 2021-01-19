@@ -28,7 +28,7 @@ class AddIsAdminToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->removeColumn('is_admin');
-            $table->removeColumn('created_at');
+            $table->removeColumn('approved_at');
         });
     }
 }
