@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 trait MustVerifyEmailImproved
 {
   /**
-   *  inscrit l email comme etant vérifié 
+   * si le mail est vérifié averti l'admin par mail
    * @return bool
    */
   public function markEmailAsVerified()
