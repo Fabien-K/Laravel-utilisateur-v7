@@ -26,3 +26,7 @@ Route::get('/mustbeapproved', 'HomeController@mustbeapproved')->name('mustBeAppr
 Route::get('/admin/users', 'AdminController@index')
     ->name('admin.index')
     ->middleware('auth','isAdmin');
+
+Route::get('/error/not-an-admin', function(){
+    return view('errors.not-an-admin');
+})->name('errors.not-an-admin');
