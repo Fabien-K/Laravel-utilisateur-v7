@@ -52,4 +52,48 @@ class User extends Authenticatable implements MustVerifyEmail
         }
         return false;
     }
+    /**
+     * verifie si l utilisateur a confirmé son mail
+     */
+    public function mailIsConfirmed()
+    {
+        if(! is_null($this->email_verified_at))
+        {
+            return true;
+        } else 
+        {
+            return false;
+        }
+    }
+    public function isApproved()
+    {
+        if( is_null($this->approved_at))
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
+    public function isRefused()
+    {
+        if( is_null($this->deleted_at))
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
+
+    public function isBanned()
+    {
+        if( is_null($this->banned_at))
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
 }
