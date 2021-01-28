@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,7 @@ Route::get('/admin/users', 'AdminController@index')
 Route::get('/error/not-an-admin', function(){
     return view('errors.not-an-admin');
 })->name('errors.not-an-admin');
+
+Route::get('/admin/approved/{id}', 'AdminController@approved')
+    ->name('admin.approve')
+    ->middleware(['auth', 'isAdmin']);
