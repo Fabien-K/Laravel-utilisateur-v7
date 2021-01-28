@@ -4,6 +4,7 @@ namespace App;
 
 use App\Http\Controllers\Auth\MustVerifyEmailImproved;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -11,6 +12,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use MustVerifyEmailImproved;
     use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
