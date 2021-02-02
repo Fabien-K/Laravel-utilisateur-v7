@@ -58,12 +58,17 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Déconnection') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    @if (Auth::user()->isAdmin())
+                                        <a class="dropdown-item" href="{{ route('admin.index') }}">
+                                            {{ __('Utilisateurs') }}
+                                        </a>                                        
+                                    @endif
                                 </div>
                             </li>
                         @endguest

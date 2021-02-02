@@ -25,4 +25,32 @@ class AdminController extends Controller
         $user->save();
         return back();
     }
+
+    public function refuse($id)
+    {
+        $user = User::findorfail($id);
+        if($user->approved_at != null)
+        {
+            $user->approved_at = null;
+            $user->save();
+        }
+        User::destroy($id);
+        return back();
+    }
+
+    public function ban($id)
+    {
+        $user = User::withTrashed()->findOrFail($id);
+        if(!$user->isAdmin())
+        {
+            if($user->approved_at != null)
+            {
+                $user->approved_at = null;
+            }
+            $user->banned_at = now();
+            $user->save();
+        }
+        User::destroy($id);
+        return back();
+    }
 }

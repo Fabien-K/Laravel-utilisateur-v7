@@ -32,6 +32,14 @@ Route::get('/error/not-an-admin', function(){
     return view('errors.not-an-admin');
 })->name('errors.not-an-admin');
 
-Route::get('/admin/approved/{id}', 'AdminController@approved')
+Route::get('/admin/approve/{id}', 'AdminController@approved')
     ->name('admin.approve')
     ->middleware(['auth', 'isAdmin']);
+
+Route::get('/admin/refuse/{id}', 'AdminController@refuse')
+->name('admin.refuses')
+->middleware(['auth', 'isAdmin']);
+
+Route::get('/admin/ban/{id}', 'AdminController@ban')
+->name('admin.ban')
+->middleware(['auth', 'isAdmin']);

@@ -46,7 +46,7 @@
                         <a href="/admin/refuse/{{ $user->id }}" class="btn btn-warning">Refuser</a>    
                       @endif
                       @if ($user->isRefused())
-                        <a href="/admin/approved/{{ $user->id }}" class="btn btn-success">Valider</a>
+                        <a href="/admin/approve/{{ $user->id }}" class="btn btn-success">Valider</a>
                       @endif
                       @if (!$user->isApproved()&& !$user->isRefused())
                         <a href="/admin/refuse/{{ $user->id }}" class="btn btn-warning">Refuser</a>    

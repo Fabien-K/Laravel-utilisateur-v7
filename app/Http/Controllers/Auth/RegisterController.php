@@ -49,11 +49,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $validator = Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+        $validator->after(function ($validator){
+            $data = $validator->getData();
+            $isBanned = User::withTrashed()->where('email', $data['email'])->whereRaw('banned_at is not null')->count();
+            if($isBanned)
+            {
+                $validator->errors()->add('email','Cet utilisateur est bannit');
+            }
+        });
+        return $validator;
     }
 
     /**
