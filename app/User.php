@@ -96,4 +96,15 @@ class User extends Authenticatable implements MustVerifyEmail
             return false;
         }
     }
+
+    public function isNotBanned()
+    {
+        if(is_null($this->banned_at))
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
 }
