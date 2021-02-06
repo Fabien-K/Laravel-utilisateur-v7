@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Messages;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
@@ -17,5 +18,15 @@ class Room extends Model
             ->generateSlugsFrom('title')
             ->saveSlugsto('slug')
             ->allowDuplicateSlugs();
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Messages::class);
     }
 }

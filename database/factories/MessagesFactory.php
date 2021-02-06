@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\messages;
+use App\Messages;
 use Faker\Generator as Faker;
 
-$factory->define(messages::class, function (Faker $faker) {
+$factory->define(Messages::class, function (Faker $faker) {
     return [
-        //
+        'body'=> $faker->paragraph
     ];
 });

@@ -11,6 +11,12 @@ class RoomSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Room::class, 10)->create();
+        factory(\App\Room::class)->create([
+            'title'=> 'Recrutement!'
+        ]);
+        factory(\App\Room::class)->create([
+            'title'=> 'Public'
+        ]);
+        
     }
 }
