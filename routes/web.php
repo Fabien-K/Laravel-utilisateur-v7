@@ -46,3 +46,8 @@ Route::get('/admin/refuse/{id}', 'AdminController@refuse')
 Route::get('/admin/ban/{id}', 'AdminController@ban')
 ->name('admin.ban')
 ->middleware(['auth', 'isAdmin']);
+
+/**
+ * Chat
+ */
+Route::get('/rooms','RoomController@index')->name('rooms.index')->middleware('auth');
