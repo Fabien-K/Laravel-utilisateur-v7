@@ -47,8 +47,8 @@ class RoomController extends Controller
      */
     public function show(Room $room)
     {
-        $messages = $room->messages()->with('users')->latest()->get();
-        dd($messages);
+        $messages = $room->messages()->with('user')->latest()->get();
+        dd($room);
         return view('rooms.show', compact('room', 'messages'));
     }
 
