@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Messages;
+use App\Message;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -110,6 +110,6 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function messages()
     {
-        return $this->hasMany(Messages::class);
+        return $this->hasMany(Message::class);
     }
 }

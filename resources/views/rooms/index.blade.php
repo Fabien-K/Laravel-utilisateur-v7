@@ -4,7 +4,7 @@
   <ul>
   @forelse ($rooms as $room )
     <li>
-      <a href="{{route('rooms.show', $room->slug)}}">{{ $room->title}}</a>     
+      <a href="{{route('rooms.show', $room->slug)}}">{{ $room->title}}</a>
     </li>
   @empty
     <p>Vous n'avez pas de room</p>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\messages;
+use App\message;
 use Illuminate\Http\Request;
 
 class MessagesController extends Controller
@@ -44,7 +44,7 @@ class MessagesController extends Controller
      * @param  \App\messages  $messages
      * @return \Illuminate\Http\Response
      */
-    public function show(messages $messages)
+    public function show(message $messages)
     {
         //
     }
@@ -55,7 +55,7 @@ class MessagesController extends Controller
      * @param  \App\messages  $messages
      * @return \Illuminate\Http\Response
      */
-    public function edit(messages $messages)
+    public function edit(message $message)
     {
         //
     }
@@ -64,10 +64,10 @@ class MessagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\messages  $messages
+     * @param  \App\message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, messages $messages)
+    public function update(Request $request, message $message)
     {
         //
     }
@@ -75,10 +75,10 @@ class MessagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\messages  $messages
+     * @param  \App\message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(messages $messages)
+    public function destroy(message $messages)
     {
         //
     }

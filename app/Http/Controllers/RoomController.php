@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use App\Message;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -45,10 +46,10 @@ class RoomController extends Controller
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show(Request $request, Room $room)
     {
+
         $messages = $room->messages()->with('user')->latest()->get();
-        dd($room);
         return view('rooms.show', compact('room', 'messages'));
     }
 

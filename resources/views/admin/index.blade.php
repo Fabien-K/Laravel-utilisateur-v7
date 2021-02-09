@@ -50,7 +50,7 @@
                       @endif
                       @if (!$user->isApproved()&& !$user->isRefused())
                         <a href="/admin/refuse/{{ $user->id }}" class="btn btn-warning">Refuser</a>    
-                        <a href="/admin/approved/{{ $user->id }}" class="btn btn-success">Valider</a>
+                        <a href="/admin/approve/{{ $user->id }}" class="btn btn-success">Valider</a>
                       @endif
                       @if (!$user->isAdmin())
                         <a href="/admin/ban/{{ $user->id }}" class="btn btn-danger">Ban</a>  

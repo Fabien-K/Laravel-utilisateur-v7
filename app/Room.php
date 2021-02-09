@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Messages;
+use App\Message;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
@@ -27,6 +27,6 @@ class Room extends Model
 
     public function messages()
     {
-        return $this->hasMany(Messages::class);
+        return $this->hasMany(Message::class);
     }
 }
